@@ -1,0 +1,56 @@
+{
+    // 按需下发：配置VMB数据 Monitoring data
+    "vmb_monitoring_data_up_request" : {
+        "气源压力监控数据上送请求，不关闭，无需发送" : "comments",
+        "UPLOAD_ENABLE          0x01 // 上送使能（默认状态）" : "macro",  
+        "UPLOAD_DISABLE         0x02 // 上送停止           " : "macro", 
+        "ENERGIZE_SAFE_VALVE    0x04 // 激活安全阀"          : "macro",
+        "DE_ENERGIZE_SAFE_VALVE 0x08 // 激活安全阀"          : "macro",
+        "status"                                            : "uint8_t"
+    },
+
+    "vmb_monitoring_data_up_response" : {
+        "每200ms发送一次上送数据" : "comments",
+        "vmb系统的状态" 	       : "comments",
+        "status_bits"             : "uint32_t",
+        "air_supply_pressure"     : "int32_t",
+        "o2_supply_pressure"      : "int32_t",
+        "pht_pressure"            : "int16_t",
+        "pht_temperature"         : "int16_t",
+        "pht_humidity"            : "int16_t",
+        "IIC Error"               : "comments",
+        "exp_flow_error_count"    : "uint32_t",
+        "exp_flow_reset_count"    : "uint32_t",
+        "pht_error_count"         : "uint32_t",
+        "pht_reset_count"         : "uint32_t"
+    },
+
+
+    "vmb_exp_pressure_up_request" : {
+        "压力监控数据上送请求，不关闭，无需发送" : "comments",
+        "UPLOAD_ENABLE          0x01 // 上送使能（默认状态）" : "macro",  
+        "UPLOAD_DISABLE         0x02 // 上送停止           " : "macro", 
+        "status"                                            : "uint8_t"
+    },
+
+    "vmb_exp_pressure_up_response" : {
+        "每2ms发送一次上送数据" : "comments",
+        "AD7689BCPZRL7 -> MPXV2010GP  分辨率: 16bit  0 kPa to 10 kPa 准确性：0.5 %" : "comments",
+        "exp_pressure"            : "int32_t",
+        "ml/min"                  : "comments",
+        "exp_flow_rate"           : "int32_t"
+    },
+
+    "vmb_test_data_request" : {
+        "测试数据上送请求，测试期间使用" : "comments",
+        "有效消息的高字节必须为0xA5"    : "comments",
+        "STATUS_VALID_MASK     0xA500" : "macro",
+        "status"            : "uint16_t"
+    },
+
+    "vmb_test_data_response" : {
+        "必须收到请求才会发送" : "comments",
+        "id"           : "uint8_t",
+        "data"         : "uint8_t[32]"
+    }
+}

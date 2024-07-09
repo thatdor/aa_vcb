@@ -1,0 +1,23 @@
+{
+    "vcb_configure_requeset" : {
+        "不定义具体字段" : "comments",
+        "raw_data"            : "int8_t[64]",
+        "version" : "uint32_t"
+    },
+
+    "vcb_configure_response" : {
+        "version" : "uint32_t"
+    },
+
+    "vcb_monitoring_data_up_request" :  {
+        "监控数据上送请求，不关闭，无需发送" : "comments",
+        "UPLOAD_ENABLE          0x01 // 上送使能（默认状态）" : "macro",  
+        "UPLOAD_DISABLE         0x02 // 上送停止           " : "macro", 
+        "status"                                            : "uint8_t"
+    },
+
+    "vcb_monitoring_data_up_response" : {
+        "不区分数据格式，16个int32_t" : "comments",
+        "raw_data"            : "int8_t[80]"
+    }
+}

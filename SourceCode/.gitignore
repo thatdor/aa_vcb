@@ -1,0 +1,12 @@
+*.d
+*.o
+*.VC.*
+*.launch
+/vent_vcb_app/.settings/
+/vent_vcb_boot/.settings/
+/vent_vcb_app/Debug/
+/vent_vcb_app/Release/
+/vent_vcb_app/.settings/
+/vent_vcb_boot/Debug/
+/vent_vcb_boot/Release/
+/vent_vcb_boot/.settings/
